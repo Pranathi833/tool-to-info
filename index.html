@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tool Info Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>🔍 Tool Info Finder</h1>
+    
+    <input type="text" id="toolInput" placeholder="Enter a tool name (e.g., Instagram)">
+    <button onclick="fetchToolInfo()">Search</button>
+
+    <!-- Loading Spinner -->
+    <div id="loading" class="spinner" style="display:none;"></div>
+
+    <!-- Error Message -->
+    <div id="error" class="error-box" style="display:none;"></div>
+
+    <!-- Output Section -->
+    <div id="output">
+        <img id="toolImage" src="" alt="Tool Logo">
+        <h2 id="toolTitle"></h2>
+        <p id="toolDesc"></p>
+    </div>
+
+    <!-- Search History -->
+    <div id="history">
+        <h3>Search History</h3>
+        <ul id="historyList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

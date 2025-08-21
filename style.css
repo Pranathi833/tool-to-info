@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #fff1cc, #ffccff);
+    text-align: center;
+    padding: 40px;
+}
+
+input {
+    padding: 10px;
+    width: 300px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#loading {
+    margin: 20px auto;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #555;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+#error {
+    margin: 20px auto;
+    background: #ffcccc;
+    color: #b30000;
+    padding: 10px;
+    width: 400px;
+    border-radius: 5px;
+}
+
+#output {
+    margin-top: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#output img {
+    max-width: 150px;
+    margin: 20px auto;
+}
+
+#output h2 {
+    font-size: 24px;
+    margin: 10px;
+}
+
+#history {
+    margin-top: 30px;
+}
+
+#historyList {
+    list-style: none;
+    padding: 0;
+}
+
+#historyList li {
+    background: white;
+    margin: 5px auto;
+    padding: 8px;
+    width: 300px;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
