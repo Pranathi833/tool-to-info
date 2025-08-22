@@ -1,3 +1,4 @@
+// Main function
 async function fetchToolInfo() {
     const toolName = document.getElementById('toolInput').value.trim();
     const loading = document.getElementById('loading');
@@ -16,7 +17,7 @@ async function fetchToolInfo() {
         output.style.display = 'none';
 
         // Fetch from Wikipedia API
-        const res = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${toolName}`);
+        const res = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(toolName)}`);
         if (!res.ok) throw new Error("Tool not found");
         const data = await res.json();
 
@@ -52,6 +53,7 @@ function addToHistory(tool) {
     const historyList = document.getElementById('historyList');
     const li = document.createElement('li');
     li.innerText = tool;
+    li.style.cursor = "pointer";
     li.onclick = () => {
         document.getElementById('toolInput').value = tool;
         fetchToolInfo();
@@ -59,7 +61,8 @@ function addToHistory(tool) {
     historyList.prepend(li);
 }
 
-// Support Enter key for search
+// Event Listeners
+document.getElementById("submitBtn").addEventListener("click", fetchToolInfo);
 document.getElementById("toolInput").addEventListener("keyup", function(event) {
     if (event.key === "Enter") {
         fetchToolInfo();

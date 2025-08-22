@@ -1,35 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Tool Info Finder</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KnowYourTool</title>
+
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>🔍 Tool Info Finder</h1>
-    
-    <input type="text" id="toolInput" placeholder="Enter a tool name (e.g., Instagram)">
-    <button onclick="fetchToolInfo()">Search</button>
+  <div class="page">
 
-    <!-- Loading Spinner -->
-    <div id="loading" class="spinner" style="display:none;"></div>
+    <!-- big centered header -->
+    <header class="site-header">
+      <h1>KnowYourTool</h1>
+    </header>
 
-    <!-- Error Message -->
-    <div id="error" class="error-box" style="display:none;"></div>
+    <!-- main area: centered card -->
+    <main class="main-area">
+      <section class="card">
+        <div class="card-inner">
 
-    <!-- Output Section -->
-    <div id="output">
-        <img id="toolImage" src="" alt="Tool Logo">
-        <h2 id="toolTitle"></h2>
-        <p id="toolDesc"></p>
-    </div>
+          <!-- pill input -->
+          <input
+            id="toolInput"
+            class="pill-input"
+            type="text"
+            placeholder="Enter a Tool Name (e.g. Instagram)"
+            aria-label="Enter a tool name"
+          />
 
-    <!-- Search History -->
-    <div id="history">
-        <h3>Search History</h3>
-        <ul id="historyList"></ul>
-    </div>
+          <!-- submit button -->
+          <div class="submit-wrap">
+            <button id="submitBtn" class="pill-btn">Search</button>
+          </div>
 
-    <script src="script.js"></script>
+          <!-- Loading spinner/message -->
+          <div id="loading" style="display:none; margin-top:15px;">⏳ Loading...</div>
+
+          <!-- Error box -->
+          <div id="error" style="display:none; color:red; margin-top:15px;"></div>
+
+          <!-- Output section -->
+          <div id="output" style="display:none; margin-top:20px; text-align:center;">
+            <img id="toolImage" src="" alt="Tool Logo" style="max-width:150px; margin-bottom:15px; display:none;" />
+            <h2 id="toolTitle"></h2>
+            <p id="toolDesc"></p>
+          </div>
+
+          <!-- History title -->
+          <h2 class="history-title">History</h2>
+          <ul id="historyList" style="list-style:none; padding:0; margin:10px 0;"></ul>
+
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
